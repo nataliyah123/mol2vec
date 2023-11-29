@@ -422,7 +422,8 @@ def sentences2vec(sentences, model, unseen=None):
     -------
     np.array
     """
-    keys = set(model.wv.vocab.keys())
+    # keys = set(model.wv.vocab.keys())
+    keys = set(model.key_to_index.keys())
     vec = []
     if unseen:
         unseen_vec = model.wv.word_vec(unseen)
